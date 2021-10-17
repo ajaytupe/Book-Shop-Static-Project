@@ -35,8 +35,8 @@ h1, h2, h3, h4 {
 /* utils */
 .container {
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
     display: flex;
     align-items: center;
 }
@@ -44,24 +44,24 @@ h1, h2, h3, h4 {
 @media (min-width: 768px) {
     .container {
         width: 700px;
-    }
-}
-
-@media (min-width: 768px) {
-    .container {
-        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
 @media (min-width: 992px) {
     .container {
         width: 900px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
 @media (min-width: 1200px) {
     .container {
         width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -262,6 +262,8 @@ hr {
     align-items: center;
 }
 
+
+
 .description__title {
     font-weight: 700;
     font-size: 40px;
@@ -283,9 +285,9 @@ hr {
     align-items: center;
 }
 
-@media(min-width : 768px) {
+@media(max-width : 768px) {
     .description__cards {
-    flex-direction: row;
+    flex-direction: column;
     }
 }
 
@@ -356,29 +358,39 @@ hr {
 .gallery {
     background-color: #003458;
     color: #eee;
-    padding: 54px 0;
+    display: flex;
+    width: 100%;
+    
 }
 
 .gallery__container {
+    display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .gallery__wrapper {
+    margin: 40px 0px;
     display: flex;
     align-items: center;
     flex-direction: column;
+    word-wrap: normal;
+    width: 100%;
 }
 
 .gallery__wrapper-window {
     display: flex;
     flex-direction: row;
-    padding: 2px;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1px;
 }
+
+
 
 .gallery__wrapper-window-img {
-    padding: 0px 5px;
+    padding: 4px;
 }
-
 .gallery__wrapper-title {
     color: white;
     font-weight: 700;
@@ -388,6 +400,26 @@ hr {
 
 .gallery__wrapper-window-button {
     margin: 30px 0px 15px;
+}
+
+@media (min-width : 768px) {
+    
+    
+    .gallery__wrapper-window {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    
+    .gallery__wrapper-window-img {
+        padding: 0px 5px;
+    }
+    
+    .gallery__wrapper-title {
+        color: white;
+        font-weight: 700;
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
 }
 
 /* Window */
@@ -403,10 +435,16 @@ hr {
 
 .statistics__wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     align-items: center;
     justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .statistics__wrapper {
+        flex-direction: row;
+    }
 }
 
 .statistics__count {
@@ -414,6 +452,7 @@ hr {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .statistics__count-numbers {
@@ -461,15 +500,28 @@ hr {
 
 .papers-card {
     display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
     gap: 4px 16px;
+}
+
+@media (min-width: 768px) {
+    .papers-card {
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto auto;
+        gap: 4px 16px;
+    }
+    .papers-card img {
+        width: 110px;
+        height: 110px;
+        grid-row: 1/4 ;
+    }
+    
 }
 
 .papers-card img {
     width: 110px;
     height: 110px;
-    grid-row: 1/4 ;
 }
 
 .papers-card p {
@@ -483,9 +535,15 @@ hr {
 /* Book details */
 .books__details-wrapper{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 30px;
     margin: 50px 0px;
+}
+
+@media (min-width: 768px) {
+    .books__details-wrapper {
+        flex-direction: row;
+    }
 }
 
 .book__details-left img {
@@ -573,6 +631,7 @@ hr {
 .footer__container {
     display: flex;
     flex-direction: column;
+    flex-basis: 48%;
 }
 
 .footer__wrapper {
@@ -582,11 +641,23 @@ hr {
     justify-content: space-between;
     align-items: flex-start;
     margin: 40px 0px;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+    .footer__wrapper {
+    flex-wrap: nowrap;
+    }
 }
 
 .footer__wrapper-list, .footer__wrapper-list .a {
     list-style: none;
+    
 }
+.footer__wrapper-list {
+    flex-basis: 48%;
+}
+
 
 .footer__wrapper-info {
     padding: 4px;
@@ -612,12 +683,11 @@ hr {
     font-size: 15px;
     color: var(--color-text-extra-muted);
     justify-content: left;
-    width: 1050px;
+    width: 400px;
 }
 
-hr {
-    border-top: 1px solid;
-    width: 100%;
-    color: #cfd6e0;
-    background-color: #f0f2f9;
+@media (min-width: 768px) {
+    .footer__end{
+    width: 1050px;
+    }
 }
