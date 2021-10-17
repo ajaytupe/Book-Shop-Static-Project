@@ -41,6 +41,18 @@ h1, h2, h3, h4 {
     align-items: center;
 }
 
+@media (min-width: 320px) {
+    .container {
+        width: 300px;
+    }
+}
+
+@media (min-width: 425px) {
+    .container {
+        width: 400px;
+    }
+}
+
 @media (min-width: 768px) {
     .container {
         width: 700px;
@@ -150,6 +162,7 @@ hr {
     align-items: center;
     transition-delay: 0;
     transition: all 0.2s ease-in-out;
+    width: 100%;
 }
 
 .site-header__logo-image {
@@ -256,6 +269,8 @@ hr {
     align-items: center;
 }
 
+
+
 .description__title {
     font-weight: 700;
     font-size: 40px;
@@ -277,9 +292,9 @@ hr {
     align-items: center;
 }
 
-@media(min-width : 768px) {
+@media(max-width : 768px) {
     .description__cards {
-    flex-direction: row;
+    flex-direction: column;
     }
 }
 
