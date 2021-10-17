@@ -376,6 +376,7 @@ hr {
     flex-direction: column;
     word-wrap: normal;
     width: 100%;
+    justify-content: center;
 }
 
 .gallery__wrapper-window {
@@ -674,7 +675,7 @@ hr {
     font-size: 15px;
     color: var(--color-text-extra-muted);
     justify-content: left;
-    width: 400px;
+    width: 350px;
 }
 
 @media (min-width: 768px) {
